@@ -13,32 +13,36 @@ const violentFont = Bree_Serif({
 });
 
 function ViolentWritter({ callback }: { callback: () => void }) {
+  const stringFormatter = (str: string) => {
+    return `<span style="color:white">${str}</span>`;
+  };
+
   return (
     <main lang="en" className={violentFont.className}>
       <TypeWritterEffect
         onInit={(tw) => {
-          tw.typeString("DO")
+          tw.typeString(stringFormatter("DO"))
             .pauseFor(150)
             .deleteAll()
-            .typeString("I")
+            .typeString(stringFormatter("I"))
             .pauseFor(150)
             .deleteAll()
-            .typeString("HAVE")
+            .typeString(stringFormatter("HAVE"))
             .pauseFor(150)
             .deleteAll()
-            .typeString("YOUR")
+            .typeString(stringFormatter("YOUR"))
             .pauseFor(150)
             .deleteAll()
-            .typeString("ATTENTO")
+            .typeString(stringFormatter("ATTENTO"))
             .pauseFor(150)
             .deleteAll()
-            .typeString("ATTENTIN")
+            .typeString(stringFormatter("ATTENTIN"))
             .pauseFor(150)
             .deleteAll()
-            .typeString("F***")
+            .typeString(stringFormatter("F***"))
             .pauseFor(150)
             .deleteAll()
-            .typeString("ATTENTION?")
+            .typeString(stringFormatter("ATTENTION?"))
             .pauseFor(150)
             .deleteAll()
             .callFunction(callback)
@@ -56,27 +60,21 @@ function ViolentWritter({ callback }: { callback: () => void }) {
 }
 
 function NiceWritter({ callback }: { callback: () => void }) {
+  const stringFormatter = (str: string) => {
+    return `<span style="color:white">${str}</span>`;
+  };
+
   return (
     <main lang="en" className={niceFont.className}>
       <TypeWritterEffect
         onInit={(tw) => {
-          tw.typeString("Great :)")
+          tw.typeString(stringFormatter("Great :)"))
             .pauseFor(300)
             .deleteAll()
-            .typeString("My name is Julián")
-            .pauseFor(400)
-            .deleteAll()
-            .typeString("I am a Fullstack software eng...")
-            .pauseFor(250)
-            .deleteAll(60)
-            .typeString("Actually...")
-            .pauseFor(400)
-            .deleteAll()
-            .typeString("I am a bit more than just that...")
-            .pauseFor(400)
-            .deleteAll(60)
-            .typeString("Keep reading :)")
-            .pauseFor(1000)
+            .typeString(
+              '<span style="color:white">My name is <span style="color:white,opacity:0.5">Julián</span></span>'
+            )
+            .pauseFor(300)
             .callFunction(callback)
             .start();
         }}

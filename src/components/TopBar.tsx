@@ -1,6 +1,6 @@
 export default function TopBar() {
   return (
-    <div className="flex justify-between items-center p-4 bg-gray-800 text-white">
+    <div className="flex justify-between items-center p-4 text-white">
       <div>
         <h1 className="text-2xl font-semibold">Julián Ramos</h1>
       </div>
