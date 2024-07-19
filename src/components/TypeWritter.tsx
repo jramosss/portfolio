@@ -1,5 +1,3 @@
-"use client";
-
 import { Montserrat, Bree_Serif } from "next/font/google";
 import { useState } from "react";
 import TypeWritterEffect from "typewriter-effect";
@@ -16,7 +14,7 @@ const violentFont = Bree_Serif({
 
 function ViolentWritter({ callback }: { callback: () => void }) {
   return (
-    <html lang="en" className={violentFont.className}>
+    <main lang="en" className={violentFont.className}>
       <TypeWritterEffect
         onInit={(tw) => {
           tw.typeString("DO")
@@ -53,13 +51,13 @@ function ViolentWritter({ callback }: { callback: () => void }) {
           skipAddStyles: false,
         }}
       />
-    </html>
+    </main>
   );
 }
 
 function NiceWritter({ callback }: { callback: () => void }) {
   return (
-    <html lang="en" className={niceFont.className}>
+    <main lang="en" className={niceFont.className}>
       <TypeWritterEffect
         onInit={(tw) => {
           tw.typeString("Great :)")
@@ -70,13 +68,13 @@ function NiceWritter({ callback }: { callback: () => void }) {
             .deleteAll()
             .typeString("I am a Fullstack software eng...")
             .pauseFor(250)
-            .deleteAll(40)
+            .deleteAll(60)
             .typeString("Actually...")
             .pauseFor(400)
             .deleteAll()
             .typeString("I am a bit more than just that...")
             .pauseFor(400)
-            .deleteAll(40)
+            .deleteAll(60)
             .typeString("Keep reading :)")
             .pauseFor(1000)
             .callFunction(callback)
@@ -88,7 +86,7 @@ function NiceWritter({ callback }: { callback: () => void }) {
           autoStart: true,
         }}
       />
-    </html>
+    </main>
   );
 }
 
@@ -98,12 +96,12 @@ export default function TypeWritter() {
   );
 
   return (
-    <main>
+    <div>
       {currentAnimation === "violent" ? (
         <ViolentWritter callback={() => setCurrentAnimation("nice")} />
       ) : (
         <NiceWritter callback={() => {}} />
       )}
-    </main>
+    </div>
   );
 }
