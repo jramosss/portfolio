@@ -1,64 +1,49 @@
+"use client";
+
+import { Montserrat, Bree_Serif } from "next/font/google";
+import { useState } from "react";
 import TypeWritterEffect from "typewriter-effect";
 
-export default function TypeWritter() {
-  const formatStringWithCapsStyle = (str: string) =>
-    `<span class='typewritter-caps'>${str}</span>`;
+const niceFont = Montserrat({
+  subsets: ["latin"],
+  weight: "400",
+});
 
-  const formatStringWithNiceStyle = (str: string) =>
-    `<span class='typewritter-nice'>${str}</span>`;
+const violentFont = Bree_Serif({
+  subsets: ["latin"],
+  weight: "400",
+});
 
+function ViolentWritter({ callback }: { callback: () => void }) {
   return (
-    <div className="h-full">
+    <html lang="en" className={violentFont.className}>
       <TypeWritterEffect
         onInit={(tw) => {
-          tw.typeString(formatStringWithCapsStyle("DO"))
+          tw.typeString("DO")
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithCapsStyle("I"))
+            .typeString("I")
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithCapsStyle("HAVE"))
+            .typeString("HAVE")
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithCapsStyle("YOUR"))
+            .typeString("YOUR")
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithCapsStyle("ATTENTO"))
+            .typeString("ATTENTO")
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithCapsStyle("ATTENTIN"))
+            .typeString("ATTENTIN")
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithCapsStyle("FUCK"))
+            .typeString("F***")
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithCapsStyle("ATTENTION?"))
+            .typeString("ATTENTION?")
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithNiceStyle("Hey :)"))
-            .pauseFor(300)
-            .deleteAll()
-            .typeString(formatStringWithNiceStyle("My name is Julian"))
-            .pauseFor(400)
-            .deleteAll()
-            .typeString(
-              formatStringWithNiceStyle("I am a Fullstack software eng...")
-            )
-            .pauseFor(250)
-            .deleteAll()
-            .typeString(formatStringWithNiceStyle("Actually..."))
-            .pauseFor(400)
-            .deleteAll()
-            .typeString(
-              formatStringWithNiceStyle("I am a bit more than just that...")
-            )
-            .pauseFor(400)
-            .deleteAll()
-            .typeString(formatStringWithNiceStyle("Keep reading :)"))
-            .pauseFor(1000)
-            .callFunction(() => {
-              // scroll down
-            })
+            .callFunction(callback)
             .start();
         }}
         options={{
@@ -68,6 +53,57 @@ export default function TypeWritter() {
           skipAddStyles: false,
         }}
       />
-    </div>
+    </html>
+  );
+}
+
+function NiceWritter({ callback }: { callback: () => void }) {
+  return (
+    <html lang="en" className={niceFont.className}>
+      <TypeWritterEffect
+        onInit={(tw) => {
+          tw.typeString("Great :)")
+            .pauseFor(300)
+            .deleteAll()
+            .typeString("My name is Julián")
+            .pauseFor(400)
+            .deleteAll()
+            .typeString("I am a Fullstack software eng...")
+            .pauseFor(250)
+            .deleteAll(40)
+            .typeString("Actually...")
+            .pauseFor(400)
+            .deleteAll()
+            .typeString("I am a bit more than just that...")
+            .pauseFor(400)
+            .deleteAll(40)
+            .typeString("Keep reading :)")
+            .pauseFor(1000)
+            .callFunction(callback)
+            .start();
+        }}
+        options={{
+          delay: 30,
+          deleteSpeed: 30,
+          autoStart: true,
+        }}
+      />
+    </html>
+  );
+}
+
+export default function TypeWritter() {
+  const [currentAnimation, setCurrentAnimation] = useState<"violent" | "nice">(
+    "violent"
+  );
+
+  return (
+    <main>
+      {currentAnimation === "violent" ? (
+        <ViolentWritter callback={() => setCurrentAnimation("nice")} />
+      ) : (
+        <NiceWritter callback={() => {}} />
+      )}
+    </main>
   );
 }
