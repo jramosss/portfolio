@@ -1,57 +1,60 @@
 import TypeWritterEffect from "typewriter-effect";
 
 export default function TypeWritter() {
-  const formatStringWithGivenStyle = (str: string) =>
-    `<span class='typewritter'>${str}</span>`;
+  const formatStringWithCapsStyle = (str: string) =>
+    `<span class='typewritter-caps'>${str}</span>`;
+
+  const formatStringWithNiceStyle = (str: string) =>
+    `<span class='typewritter-nice'>${str}</span>`;
 
   return (
     <div className="h-full">
       <TypeWritterEffect
         onInit={(tw) => {
-          tw.typeString(formatStringWithGivenStyle("DO"))
+          tw.typeString(formatStringWithCapsStyle("DO"))
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithGivenStyle("I"))
+            .typeString(formatStringWithCapsStyle("I"))
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithGivenStyle("HAVE"))
+            .typeString(formatStringWithCapsStyle("HAVE"))
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithGivenStyle("YOUR"))
+            .typeString(formatStringWithCapsStyle("YOUR"))
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithGivenStyle("ATTENTO"))
+            .typeString(formatStringWithCapsStyle("ATTENTO"))
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithGivenStyle("ATTENTIN"))
+            .typeString(formatStringWithCapsStyle("ATTENTIN"))
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithGivenStyle("FUCK"))
+            .typeString(formatStringWithCapsStyle("FUCK"))
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithGivenStyle("ATTENTION?"))
+            .typeString(formatStringWithCapsStyle("ATTENTION?"))
             .pauseFor(150)
             .deleteAll()
-            .typeString(formatStringWithGivenStyle("Hey :)"))
+            .typeString(formatStringWithNiceStyle("Hey :)"))
             .pauseFor(300)
             .deleteAll()
-            .typeString(formatStringWithGivenStyle("My name is Julian"))
+            .typeString(formatStringWithNiceStyle("My name is Julian"))
             .pauseFor(400)
             .deleteAll()
             .typeString(
-              formatStringWithGivenStyle("I am a Fullstack software eng...")
+              formatStringWithNiceStyle("I am a Fullstack software eng...")
             )
             .pauseFor(250)
             .deleteAll()
-            .typeString(formatStringWithGivenStyle("Actually..."))
+            .typeString(formatStringWithNiceStyle("Actually..."))
             .pauseFor(400)
             .deleteAll()
             .typeString(
-              formatStringWithGivenStyle("I am a bit more than just that...")
+              formatStringWithNiceStyle("I am a bit more than just that...")
             )
             .pauseFor(400)
             .deleteAll()
-            .typeString(formatStringWithGivenStyle("Keep reading :)"))
+            .typeString(formatStringWithNiceStyle("Keep reading :)"))
             .pauseFor(1000)
             .callFunction(() => {
               // scroll down

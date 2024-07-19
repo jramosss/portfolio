@@ -8,9 +8,15 @@
   }
 }
 
-.typewritter {
+.typewritter-caps {
   font-size: 500;
   font-weight: 700;
+}
+
+.typewritter-nice {
+  font-size: 500;
+  font-weight: 400;
+  /* Apply a custom font */
 }
 
 .Typewriter__wrapper {
