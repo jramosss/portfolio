@@ -32,7 +32,9 @@ function WorkExperienceItem({
           </div>
           <div className="mt-2 flex flex-col">
             {description.split("\n").map((line) => (
-              <span key={line}>{line}</span>
+              <span className="text-gray-200" key={line}>
+                {line}
+              </span>
             ))}
           </div>
         </div>
@@ -45,30 +47,32 @@ export default function WorkExperience() {
   return (
     <>
       <div className="flex flex-col justify-center items-center gap-4">
-        <span className="text-2xl">Work Experience</span>
-        <WorkExperienceItem
-          companyName="Sendblue"
-          since="April 2023"
-          to="Present"
-          position="Chief Technology Officer"
-          description={`Leading the technology team to work with a big infrastructure to send messages through iMessage.${"\n"}Working with the CEO to define the company's strategy`}
-        />
-        <WorkExperienceItem
-          companyName="SumtechLabs"
-          since="April 2023"
-          to="Present"
-          position="Fullstack Software Engineer"
-          description={`Translating customer ideas into software solutions.${"\n"}Worked with lots of different tools and technologies`}
-        />
-        <WorkExperienceItem
-          companyName="Seenka"
-          since="November 2021"
-          to="April 2023"
-          position="Product Team Lead"
-          description={
-            "Lead a team of 6 developers where we built and mantained a platform with a huge cloud infrastructure"
-          }
-        />
+        <span className="text-4xl font-bold">Work Experience</span>
+        <div className="flex flex-col justify-center items-center gap-4 mt-2 w-full">
+          <WorkExperienceItem
+            companyName="Sendblue"
+            since="April 2023"
+            to="Present"
+            position="Chief Technology Officer"
+            description={`Leading the technology team to work with a big infrastructure to send messages through iMessage.${"\n"}Working with the CEO to define the company's strategy`}
+          />
+          <WorkExperienceItem
+            companyName="SumtechLabs"
+            since="April 2023"
+            to="Present"
+            position="Fullstack Software Engineer"
+            description={`Translating customer ideas into software solutions.${"\n"}Worked with lots of different tools and technologies`}
+          />
+          <WorkExperienceItem
+            companyName="Seenka"
+            since="November 2021"
+            to="April 2023"
+            position="Product Team Lead"
+            description={
+              "Lead a team of 6 developers where we built and mantained a platform with a huge cloud infrastructure"
+            }
+          />
+        </div>
       </div>
     </>
   );
