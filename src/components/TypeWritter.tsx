@@ -88,7 +88,7 @@ function NiceWritter({ callback }: { callback: () => void }) {
   );
 }
 
-export default function TypeWritter() {
+export default function TypeWritter({ didItEnd }: { didItEnd: () => void }) {
   const [currentAnimation, setCurrentAnimation] = useState<"violent" | "nice">(
     "violent"
   );
@@ -98,7 +98,7 @@ export default function TypeWritter() {
       {currentAnimation === "violent" ? (
         <ViolentWritter callback={() => setCurrentAnimation("nice")} />
       ) : (
-        <NiceWritter callback={() => {}} />
+        <NiceWritter callback={didItEnd} />
       )}
     </div>
   );
