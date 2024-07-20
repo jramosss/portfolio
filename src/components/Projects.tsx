@@ -12,7 +12,7 @@ function ProjectItem({ name, since, to, description, link }: ProjectItemProps) {
   return (
     // biome-ignore lint/a11y/useKeyWithClickEvents: why does this even exist?
     <div
-      className="w-[85%] cursor-pointer"
+      className="w-[85%] cursor-pointer hover:scale-105 transition-transform"
       onClick={() => {
         window.open(link, "_blank");
       }}

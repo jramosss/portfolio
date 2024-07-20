@@ -16,7 +16,7 @@ function WorkExperienceItem({
   description,
 }: WorkExperienceItemProps) {
   return (
-    <div className="w-[85%]">
+    <div className="w-[85%] hover:scale-105 transition-transform">
       <Container>
         <div className="flex flex-col">
           <div className="flex justify-start">
