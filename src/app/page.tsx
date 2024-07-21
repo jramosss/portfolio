@@ -25,8 +25,8 @@ export default function Home() {
 			{showContent && (
 				<Motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
 					<div className="flex mt-36 flex-grow">
-						<section className="flex flex-grow columns-6">
-							<div className="sticky top-0">
+						<section className="flex flex-grow columns-6 items-center justify-center">
+							<div className="sticky">
 								<Index />
 							</div>
 						</section>
