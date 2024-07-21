@@ -8,13 +8,7 @@ type WorkExperienceItemProps = {
 	description: string;
 };
 
-function WorkExperienceItem({
-	companyName,
-	position,
-	since,
-	to,
-	description,
-}: WorkExperienceItemProps) {
+function WorkExperienceItem({ companyName, position, since, to, description }: WorkExperienceItemProps) {
 	return (
 		<div className="w-[85%] hover:scale-105 transition-transform">
 			<Container>
@@ -45,7 +39,7 @@ export default function WorkExperience() {
 	return (
 		<>
 			<div className="flex flex-col justify-center items-center gap-4">
-				<span className={"text-4xl font-bold"}>EXPERIENCE</span>
+				<span className="text-4xl font-bold">EXPERIENCE</span>
 				<div className="flex flex-col justify-center items-center gap-4 mt-2 w-full">
 					<WorkExperienceItem
 						companyName="Sendblue"
