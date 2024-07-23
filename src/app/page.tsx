@@ -6,6 +6,7 @@ import Projects from "../components/Projects";
 import TypeWritter from "../components/TypeWritter";
 import WorkExperience from "../components/WorkExperience";
 import Index from "../components/Index";
+import About from "../components/About";
 
 export default function Home() {
 	const [showContent, setShowContent] = useState(false);
@@ -24,25 +25,32 @@ export default function Home() {
 			</Motion.section>
 			{showContent && (
 				<Motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-					<div className="flex mt-36 flex-grow">
-						<section className="flex flex-grow columns-6 items-center justify-center">
-							<div className="sticky">
-								<Index />
+					<div className="mt-36 flex-grow overflow-y-auto">
+						<div className="flex">
+							<section className="flex flex-grow columns-6 items-center justify-center">
+								<div className="sticky top-0">
+									<Index />
+								</div>
+							</section>
+							<div className="sticky top-0">
+								<div className="border-r border-white border-x-4 h-[40%] opacity-50" />
 							</div>
-						</section>
-						<div className="mt-48">
-							<div className="border-r border-white border-x-4 h-[40%] opacity-50" />
-						</div>
-						<section className="flex columns-6 overflow-y-auto">
-							<section className="flex flex-col gap-20">
-								<section className="w-full">
-									<WorkExperience />
-								</section>
-								<section className="w-full">
-									<Projects />
+							<section className="flex columns-6">
+								<section className="flex flex-col gap-20">
+									<section className="flex justify-center">
+										<div className="w-[750px]">
+											<About />
+										</div>
+									</section>
+									<section>
+										<WorkExperience />
+									</section>
+									<section>
+										<Projects />
+									</section>
 								</section>
 							</section>
-						</section>
+						</div>
 					</div>
 				</Motion.section>
 			)}

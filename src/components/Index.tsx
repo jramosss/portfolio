@@ -9,7 +9,7 @@ function Bar() {
 
 function Item({ label, onClick }: IndexItemProps) {
 	return (
-		<div className="flex gap-4 items-center transition-transform duration-200 ease-in-out hover:scale-110">
+		<div className="flex gap-4 items-center transition-transform duration-200 ease-in-out hover:scale-125">
 			<Bar />
 			<div className="w-[60%]">
 				<button

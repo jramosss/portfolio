@@ -32,12 +32,7 @@ function ProjectItem({ name, since, to, description, link }: ProjectItemProps) {
 							<span className="text-gray-200" key={line}>
 								{line.includes("<b>") ? (
 									<div className="flex gap-1">
-										<b>
-											{line
-												.split("</b>")[0]
-												.replace("<b>", "")
-												.replace("</b>", "")}
-										</b>
+										<b>{line.split("</b>")[0].replace("<b>", "").replace("</b>", "")}</b>
 										<p>{line.split("</b>")[1]}</p>
 									</div>
 								) : (
@@ -54,37 +49,35 @@ function ProjectItem({ name, since, to, description, link }: ProjectItemProps) {
 
 export default function Projects() {
 	return (
-		<>
-			<div className="flex flex-col justify-center items-center gap-4">
-				<span className="text-4xl font-bold">PROJECTS</span>
-				<div className="flex flex-col justify-center items-center gap-4 mt-2">
-					<ProjectItem
-						name="Be Saints"
-						since="March 2021"
-						to="Present"
-						link="https://linktr.ee/besaintsapp"
-						description={`<b>Cross platform mobile app</b> that sends a saint phrase per day as a notification.
+		<div className="flex flex-col justify-center items-center gap-4">
+			<span className="text-4xl font-bold">PROJECTS</span>
+			<div className="flex flex-col justify-center items-center gap-4 mt-2">
+				<ProjectItem
+					name="Be Saints"
+					since="March 2021"
+					to="Present"
+					link="https://linktr.ee/besaintsapp"
+					description={`<b>Cross platform mobile app</b> that sends a saint phrase per day as a notification.
               ${"\n"}I was in charge of both development and decision making, 
               alongside with a partner developer and a graphic designer.${"\n"}`}
-					/>
-					<ProjectItem
-						name="Cancionero Cifraclub"
-						since="March 2024"
-						to="Present"
-						description={`A web app that lets users create a PDF with song chords from a cifraclub.com URL. ${"\n"}I developed it for personal use and decided to share it.`}
-						link="https://github.com/jramosss/cifraclub-cancionero"
-					/>
-					<ProjectItem
-						name="PolipedIA (WIP)"
-						since="June 2024"
-						to="Present"
-						description={
-							"An AI app that generates realtime transcription, summarization and diarization of senatorial camera sessions."
-						}
-						link="private"
-					/>
-				</div>
+				/>
+				<ProjectItem
+					name="Cancionero Cifraclub"
+					since="March 2024"
+					to="Present"
+					description={`A web app that lets users create a PDF with song chords from a cifraclub.com URL. ${"\n"}I developed it for personal use and decided to share it.`}
+					link="https://github.com/jramosss/cifraclub-cancionero"
+				/>
+				<ProjectItem
+					name="PolipedIA (WIP)"
+					since="June 2024"
+					to="Present"
+					description={
+						"An AI app that generates realtime transcription, summarization and diarization of senatorial camera sessions."
+					}
+					link="private"
+				/>
 			</div>
-		</>
+		</div>
 	);
 }
