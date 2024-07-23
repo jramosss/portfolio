@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { motion as Motion } from "framer-motion";
 import Projects from "../components/Projects";
 import WorkExperience from "../components/WorkExperience";
 import Index from "../components/Index";
 import About from "../components/About";
 import AnimatedTypeWritter from "../components/AnimatedTypeWritter";
 import AnimatedPageContent from "../components/AnimatedPageContent";
+import Contact from "../components/Contact";
 
 export default function Home() {
 	const [showContent, setShowContent] = useState(false);
@@ -18,31 +18,36 @@ export default function Home() {
 			{showContent && (
 				<AnimatedPageContent>
 					<div className="mt-36 flex-grow overflow-y-auto">
-						<div className="flex">
-							<section className="flex flex-grow columns-6 justify-center">
+						<section>
+							<div className="flex">
+								<section className="flex flex-grow columns-6 justify-center">
+									<div className="sticky">
+										<Index />
+									</div>
+								</section>
 								<div className="sticky">
-									<Index />
+									<div className="border-r border-white border-x-4 h-[40%] opacity-50" />
 								</div>
-							</section>
-							<div className="sticky">
-								<div className="border-r border-white border-x-4 h-[40%] opacity-50" />
-							</div>
-							<section className="flex columns-6">
-								<section className="flex flex-col gap-20">
-									<section className="flex justify-center">
-										<div className="w-[750px]">
-											<About />
-										</div>
-									</section>
-									<section>
-										<WorkExperience />
-									</section>
-									<section>
-										<Projects />
+								<section className="flex columns-6">
+									<section className="flex flex-col gap-20">
+										<section className="flex justify-center">
+											<div className="w-[750px]">
+												<About />
+											</div>
+										</section>
+										<section>
+											<WorkExperience />
+										</section>
+										<section>
+											<Projects />
+										</section>
 									</section>
 								</section>
-							</section>
-						</div>
+							</div>
+						</section>
+						<section className="mt-24">
+							<Contact />
+						</section>
 					</div>
 				</AnimatedPageContent>
 			)}

@@ -75,7 +75,7 @@ export default function Projects() {
 					description={
 						"An AI app that generates realtime transcription, summarization and diarization of senatorial camera sessions."
 					}
-					link="private"
+					link="/private"
 				/>
 			</div>
 		</div>
