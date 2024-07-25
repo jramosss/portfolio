@@ -1,3 +1,12 @@
+import type { RefObject } from "react";
+
+type IndexProps = {
+	aboutRef: RefObject<HTMLDivElement>;
+	experienceRef: RefObject<HTMLDivElement>;
+	projectsRef: RefObject<HTMLDivElement>;
+	contactRef: RefObject<HTMLDivElement>;
+};
+
 type IndexItemProps = {
 	label: string;
 	onClick: () => void;
@@ -24,13 +33,17 @@ function Item({ label, onClick }: IndexItemProps) {
 	);
 }
 
-export default function Index() {
+export default function Index({ aboutRef, contactRef, experienceRef, projectsRef }: IndexProps) {
+	const scrollToSection = (sectionRef: RefObject<HTMLDivElement>) => {
+		sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+	};
+
 	return (
 		<div className="flex w-48 flex-col gap-2">
-			<Item label="About" onClick={() => console.log("About")} />
-			<Item label="Experience" onClick={() => console.log("Experience")} />
-			<Item label="Projects" onClick={() => console.log("Projects")} />
-			<Item label="Contact" onClick={() => console.log("Contact")} />
+			<Item label="About" onClick={() => scrollToSection(aboutRef)} />
+			<Item label="Experience" onClick={() => scrollToSection(experienceRef)} />
+			<Item label="Projects" onClick={() => scrollToSection(projectsRef)} />
+			<Item label="Contact" onClick={() => scrollToSection(contactRef)} />
 		</div>
 	);
 }
