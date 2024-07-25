@@ -4,7 +4,7 @@ type IndexItemProps = {
 };
 
 function Bar() {
-	return <div className="flex-grow border-t rounded-xl border-gray-500 border-y-2" />;
+	return <div className="flex-grow border-t rounded-xl border-blue-400/90 border-y-2" />;
 }
 
 function Item({ label, onClick }: IndexItemProps) {

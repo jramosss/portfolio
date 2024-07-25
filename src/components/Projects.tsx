@@ -1,4 +1,5 @@
 import Container from "./Container";
+import Tag from "./Tag";
 
 type ProjectItemProps = {
 	name: string;
@@ -6,9 +7,10 @@ type ProjectItemProps = {
 	to: string;
 	description: string;
 	link: string;
+	technologies: string[];
 };
 
-function ProjectItem({ name, since, to, description, link }: ProjectItemProps) {
+function ProjectItem({ name, since, to, description, link, technologies }: ProjectItemProps) {
 	return (
 		// biome-ignore lint/a11y/useKeyWithClickEvents: why does this even exist?
 		<div
@@ -41,6 +43,11 @@ function ProjectItem({ name, since, to, description, link }: ProjectItemProps) {
 							</span>
 						))}
 					</div>
+					<div className="flex gap-2 mt-4">
+						{technologies.map((tech) => (
+							<Tag key={tech}>{tech}</Tag>
+						))}
+					</div>
 				</div>
 			</Container>
 		</div>
@@ -60,6 +67,7 @@ export default function Projects() {
 					description={`<b>Cross platform mobile app</b> that sends a saint phrase per day as a notification.
               ${"\n"}I was in charge of both development and decision making, 
               alongside with a partner developer and a graphic designer.${"\n"}`}
+					technologies={["React Native", "Firebase", "Expo", "Typescript"]}
 				/>
 				<ProjectItem
 					name="Cancionero Cifraclub"
@@ -67,6 +75,7 @@ export default function Projects() {
 					to="Present"
 					description={`A web app that lets users create a PDF with song chords from a cifraclub.com URL. ${"\n"}I developed it for personal use and decided to share it.`}
 					link="https://github.com/jramosss/cifraclub-cancionero"
+					technologies={["Python", "BeautifulSoup", "HTML", "CSS", "Selenium"]}
 				/>
 				<ProjectItem
 					name="PolipedIA (WIP)"
@@ -76,6 +85,7 @@ export default function Projects() {
 						"An AI app that generates realtime transcription, summarization and diarization of senatorial camera sessions."
 					}
 					link="/private"
+					technologies={["Python", "PyTorch", "Triton", "Huggingface"]}
 				/>
 			</div>
 		</div>

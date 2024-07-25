@@ -71,9 +71,7 @@ function NiceWritter({ callback }: { callback: () => void }) {
 					tw.typeString(stringFormatter("Great :)"))
 						.pauseFor(300)
 						.deleteAll()
-						.typeString(
-							'<span style="color:white">My name is <span style="color:white,opacity:0.5">Julián</span></span>',
-						)
+						.typeString(stringFormatter("My name is Julián"))
 						.pauseFor(300)
 						.callFunction(callback)
 						.start();
@@ -89,9 +87,7 @@ function NiceWritter({ callback }: { callback: () => void }) {
 }
 
 export default function TypeWritter({ didItEnd }: { didItEnd: () => void }) {
-	const [currentAnimation, setCurrentAnimation] = useState<"violent" | "nice">(
-		"violent",
-	);
+	const [currentAnimation, setCurrentAnimation] = useState<"violent" | "nice">("violent");
 
 	return (
 		<div>
