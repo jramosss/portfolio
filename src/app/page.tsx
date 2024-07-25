@@ -24,8 +24,6 @@ export default function Home() {
 				<div>
 					<AnimatedPageContent>
 						<AnimatedSubTitle />
-					</AnimatedPageContent>
-					<AnimatedPageContent>
 						<section className="flex mt-48" id="body">
 							<section className="flex flex-col flex-grow">
 								<div className="sticky top-0">
