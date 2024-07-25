@@ -19,7 +19,7 @@ export default function About() {
 				other.
 			</Paragraph>
 			<Paragraph>
-				<strong>But do not get me wrong...</strong> I also like my weird green letters very much
+				<strong>But do not get me wrong...</strong> I also like my weird green symbols very much
 			</Paragraph>
 		</div>
 	);

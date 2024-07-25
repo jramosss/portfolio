@@ -17,38 +17,34 @@ export default function Home() {
 			<AnimatedTypeWritter onFinish={() => setShowContent(true)} />
 			{showContent && (
 				<AnimatedPageContent>
-					<div className="mt-36 flex-grow overflow-y-auto">
-						<section>
-							<div className="flex">
-								<section className="flex flex-grow columns-6 justify-center">
-									<div className="sticky">
-										<Index />
-									</div>
-								</section>
-								<div className="sticky">
-									<div className="border-r border-white border-x-4 h-[40%] opacity-50" />
+					<section className="flex mt-36" id="body">
+						<section className="flex flex-col flex-grow">
+							<div className="sticky top-0">
+								<div className="flex justify-center mt-80">
+									<Index />
 								</div>
-								<section className="flex columns-6">
-									<section className="flex flex-col gap-20">
-										<section className="flex justify-center">
-											<div className="w-[750px]">
-												<About />
-											</div>
-										</section>
-										<section>
-											<WorkExperience />
-										</section>
-										<section>
-											<Projects />
-										</section>
-									</section>
-								</section>
 							</div>
 						</section>
-						<section className="mt-24">
-							<Contact />
+
+						<section className="flex columns-6">
+							<section className="flex flex-col gap-20">
+								<section className="flex justify-center">
+									<div className="w-[750px]">
+										<About />
+									</div>
+								</section>
+								<section>
+									<WorkExperience />
+								</section>
+								<section>
+									<Projects />
+								</section>
+							</section>
 						</section>
-					</div>
+					</section>
+					<section className="mt-24">
+						<Contact />
+					</section>
 				</AnimatedPageContent>
 			)}
 		</main>
