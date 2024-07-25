@@ -1,4 +1,5 @@
 import Container from "./Container";
+import Tag from "./Tag";
 
 type WorkExperienceItemProps = {
 	companyName: string;
@@ -6,9 +7,10 @@ type WorkExperienceItemProps = {
 	since: string;
 	to: string;
 	description: string;
+	technologies: string[];
 };
 
-function WorkExperienceItem({ companyName, position, since, to, description }: WorkExperienceItemProps) {
+function WorkExperienceItem({ companyName, position, since, to, description, technologies }: WorkExperienceItemProps) {
 	return (
 		<div className="w-[85%] hover:scale-105 transition-transform">
 			<Container>
@@ -29,6 +31,11 @@ function WorkExperienceItem({ companyName, position, since, to, description }: W
 							</span>
 						))}
 					</div>
+					<div className="flex gap-2 mt-4">
+						{technologies.map((tech) => (
+							<Tag key={tech}>{tech}</Tag>
+						))}
+					</div>
 				</div>
 			</Container>
 		</div>
@@ -47,6 +54,7 @@ export default function WorkExperience() {
 						to="Present"
 						position="Chief Technology Officer"
 						description={`Leading the technology team to work with a big infrastructure to send messages through iMessage.${"\n"}Working with the CEO to define the company's strategy`}
+						technologies={["Next.js", "Node.js", "AWS", "Express.js", "Firebase", "Prisma", "PostgreSQL"]}
 					/>
 					<WorkExperienceItem
 						companyName="SumtechLabs"
@@ -54,6 +62,7 @@ export default function WorkExperience() {
 						to="Present"
 						position="Fullstack Software Engineer"
 						description={`Translating customer ideas into software solutions.${"\n"}Worked with lots of different tools and technologies`}
+						technologies={["AWS", "Google Cloud Services", "pm2"]}
 					/>
 					<WorkExperienceItem
 						companyName="Seenka"
@@ -63,6 +72,7 @@ export default function WorkExperience() {
 						description={
 							"Lead a team of 6 developers where we built and mantained a platform with a huge cloud infrastructure"
 						}
+						technologies={["Python", "Django", "Google Cloud Services", "Docker", "Kubernetes"]}
 					/>
 				</div>
 			</div>
