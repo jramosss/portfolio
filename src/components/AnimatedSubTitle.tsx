@@ -33,7 +33,7 @@ export default function AnimatedSubTitle() {
 	return (
 		<section className="absolute left-1/2 transform -translate-x-1/2 top-32 -translate-y-1/2 transition-all duration-1000 ease-in-out">
 			<h2 className="flex gap-2 text-3xl font-bold text-center text-gray-400 break-words">
-				And i'm a <Adjective />
+				And i'm a<h2 className="text-3xl font-bold text-center text-blue-400/90">Fullstack Software Engineer</h2>
 			</h2>
 		</section>
 	);

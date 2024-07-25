@@ -61,7 +61,7 @@ function ViolentWritter({ callback }: { callback: () => void }) {
 
 function NiceWritter({ callback }: { callback: () => void }) {
 	const stringFormatter = (str: string) => {
-		return `<span style="color:white">${str}</span>`;
+		return `<span style="color: white, font-weight: bold">${str}</span>`;
 	};
 
 	return (

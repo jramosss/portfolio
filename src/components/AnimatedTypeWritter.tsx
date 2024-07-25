@@ -7,17 +7,19 @@ export default function AnimatedTypeWritter({ onFinish }: { onFinish: () => void
 
 	return (
 		<Motion.section
-			className={`absolute left-1/2 transform -translate-x-1/2 ${
-				animationFinished ? "top-4" : "top-1/2 -translate-y-1/2"
-			} transition-all duration-1000 ease-in-out`}
-			initial={{ fontSize: "6rem" }}
-			animate={{ fontSize: animationFinished ? "2rem" : "6rem" }}
-			transition={{ duration: 1 }}
+			className="absolute left-1/2 transform -translate-x-1/2"
+			initial={{ fontSize: "6rem", top: "50%", y: "-50%", x: "-47%" }}
+			animate={{
+				fontSize: animationFinished ? "2rem" : "6rem",
+				top: animationFinished ? "1rem" : "50%",
+				y: animationFinished ? "0%" : "-50%",
+			}}
+			transition={{ duration: 1, ease: "easeInOut" }}
 		>
 			<TypeWritter
 				didItEnd={() => {
 					setAnimationFinished(true);
-					onFinish();
+					setTimeout(() => onFinish(), 500);
 				}}
 			/>
 		</Motion.section>
